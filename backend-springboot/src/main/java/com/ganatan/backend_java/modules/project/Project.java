@@ -4,7 +4,9 @@ import com.ganatan.backend_java.shared.models.BaseEntity;
 // import com.ganatan.backend_java.modules.user.User;
 import com.ganatan.backend_java.modules.topic.Topic;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import java.util.Date;
@@ -13,6 +15,8 @@ import java.util.List;
 @Entity
 @Table(name = "projects")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Project extends BaseEntity<String> {
 
     @Column(nullable = false)

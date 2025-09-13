@@ -15,7 +15,7 @@ import java.io.Serializable;
 public abstract class BaseEntity<ID extends Serializable> implements TenantAware {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private ID id;
 
     @JoinColumn(name = "user_id", referencedColumnName = "id")

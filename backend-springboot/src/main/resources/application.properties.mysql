@@ -7,7 +7,7 @@ db.client=sql
 
 # === Application ===
 spring.application.name=backend-springboot
-server.port=8080
+server.port=8081
 
 # === MySQL Configuration ===
 spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/backend_javascript}
