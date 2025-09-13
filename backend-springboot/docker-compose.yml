@@ -1,0 +1,22 @@
+services:
+  minio:
+    image: minio/minio:RELEASE.2024-09-22T00-33-43Z
+    environment:
+      #La password tiene que tener 8 o mas caracteres
+      MINIO_ROOT_USER: adminadmin
+      MINIO_ROOT_PASSWORD: adminadmin
+    ports:
+      - "9000:9000"
+#     - "9001:9001"
+    networks:
+      cadastre-network:
+    volumes:
+      - minio_data:/data
+    command: server /data
+
+
+networks:
+  cadastre-network:
+
+volumes:
+  minio_data:
