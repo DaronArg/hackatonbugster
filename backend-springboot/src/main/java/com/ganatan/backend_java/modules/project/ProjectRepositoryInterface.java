@@ -1,10 +1,10 @@
-package com.ganatan.backend_java.modules.person;
+package com.ganatan.backend_java.modules.project;
 
 import com.ganatan.backend_java.shared.repositories.GenericRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepositoryInterface extends GenericRepository<Person, Long> {
+public interface ProjectRepositoryInterface extends GenericRepository<Project, String> {
 
     boolean existsByName(String name);
 
@@ -12,4 +12,3 @@ public interface PersonRepositoryInterface extends GenericRepository<Person, Lon
         System.out.println("[ganatan] Repository actif : " + getClass().getSimpleName());
     }
 }
-
