@@ -57,6 +57,7 @@ public class SecurityConfig {
                     .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                     .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
                     .authorizeHttpRequests(authorize -> authorize
+                            .requestMatchers("/api/pdf/**").permitAll()
                             .anyRequest().permitAll()
                     )
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -65,14 +66,6 @@ public class SecurityConfig {
             http.csrf(csrf -> csrf.disable())
                     .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                     .authorizeHttpRequests(authorize -> authorize
-                            .requestMatchers("/api/v1/auth/**",
-                                    "/api/v1/matchs",
-                                    "/api/v1/discount/available/**",
-                                    "/v3/api-docs/**",
-                                    "/swagger-ui/**",
-                                    "/swagger-ui/index.html",
-                                    "/api/v1/**")
-                            .permitAll()
                             .anyRequest().authenticated()
                     )
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -90,9 +83,12 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin(frontURL);
         configuration.addAllowedOrigin("http://localhost:4200");
+        configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedOrigin("http://localhost:3003");
+        configuration.addAllowedOrigin("http://localhost:5500");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
-        configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

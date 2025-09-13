@@ -2,12 +2,7 @@ package com.ganatan.backend_java.shared.models;
 
 import com.ganatan.backend_java.modules.users.entities.User;
 import com.ganatan.backend_java.multitenancy.TenantAware;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Filter;
 import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.ParamDef;
@@ -23,7 +18,7 @@ public abstract class BaseEntity<ID extends Serializable> implements TenantAware
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ID id;
 
-    @Column(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne
     private User user;
 
