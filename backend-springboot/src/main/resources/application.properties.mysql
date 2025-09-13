@@ -1,0 +1,20 @@
+# === Infos ===
+app.version=1.0.0
+app.name=backend-springboot
+
+# === Database Client (mock | pg | mysql) ===
+db.client=sql
+
+# === Application ===
+spring.application.name=backend-springboot
+server.port=8080
+
+# === MySQL Configuration ===
+spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/backend_javascript}
+spring.datasource.username=${DB_USERNAME:root}
+spring.datasource.password=${DB_PASSWORD:Trustno1}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# === Hibernate / JPA ===
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
