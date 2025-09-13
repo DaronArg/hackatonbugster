@@ -35,9 +35,30 @@ public class Project extends BaseEntity<String> {
     @Column(name = "voice_name")
     private String voiceName;
 
+    /**
+     * The MIME type of the file.
+     */
+    @Column(name = "content_type")
+    private String contentType;
+    /**
+     * The URL of the file.
+     */
+    @Column(name = "file_url")
+    private String fileUrl;
+
     // Relación OneToMany con Topic
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Topic> topics;
+
+    public Project(ProjectRequestDTO project) {
+        this.name = project.getName();
+        this.description = project.getDescription();
+        this.voiceId = project.getVoiceId();
+        this.voiceCategory = project.getVoiceCategory();
+        this.voiceName = project.getVoiceName();
+        this.topics = project.getTopics();
+        this.name = project.getName();
+    }
 
     @PrePersist
     protected void onCreate() {
