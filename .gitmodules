@@ -1,0 +1,3 @@
+[submodule "frontend-nextjs/v0-flashcards"]
+	path = frontend-nextjs/v0-flashcards
+	url = https://github.com/JoaquinBenegas2/v0-flashcards.git
