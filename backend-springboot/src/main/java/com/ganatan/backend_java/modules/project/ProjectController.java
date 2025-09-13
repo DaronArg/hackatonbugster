@@ -54,6 +54,7 @@ public class ProjectController extends GenericController<Project, String> {
     @GetMapping("/{id}/statistics")
     public ProjectStats getProjectStatistics(@PathVariable String id) {
         return projectService.getProjectStatistics(id);
+    }
     @PostMapping("/impl")
     @ResponseStatus(HttpStatus.CREATED)
     public Project create(@RequestBody ProjectRequestDTO item)  {
