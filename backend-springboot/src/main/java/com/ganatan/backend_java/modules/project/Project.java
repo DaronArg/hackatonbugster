@@ -6,7 +6,7 @@ import com.ganatan.backend_java.modules.topic.Topic;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "projects")
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 public class Project extends BaseEntity<String> {
 
