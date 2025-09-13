@@ -30,6 +30,17 @@ public class Flashcard extends BaseEntity<String> {
     @Column(name = "review_count")
     private int reviewCount;
 
+    // Campos para algoritmo de repetición espaciada
+    @Column(name = "easiness_factor")
+    private double easinessFactor;
+
+    @Column(name = "interval_days")
+    private int interval;
+
+    @Column(name = "next_review_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date nextReviewDate;
+
     // Relación ManyToOne con Deck
     @ManyToOne
     @JoinColumn(name = "deck_id")

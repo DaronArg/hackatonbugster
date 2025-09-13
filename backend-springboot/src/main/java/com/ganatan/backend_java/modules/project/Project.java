@@ -33,11 +33,6 @@ public class Project extends BaseEntity<String> {
     @Column(name = "voice_name")
     private String voiceName;
 
-    // // Relación ManyToOne con User
-    // @ManyToOne
-    // @JoinColumn(name = "owner_id")
-    // private User owner;
-
     // Relación OneToMany con Topic
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Topic> topics;
