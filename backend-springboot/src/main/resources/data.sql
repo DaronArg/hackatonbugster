@@ -19,20 +19,4 @@ INSERT INTO flashcards (id, question, answer, difficulty, deck_id) VALUES ('g2b3
 INSERT INTO flashcards (id, question, answer, difficulty, deck_id) VALUES ('h3c4d5e6-f7a8-4b9c-1d2e-3f4a5b6c7d8e', 'To eat', 'Comer', 'MEDIUM', 'e1b2c3d4-5f6a-4b3c-8d7e-9f8a7b6c5d4e');
 INSERT INTO flashcards (id, question, answer, difficulty, deck_id) VALUES ('i4d5e6f7-a8b9-4c1d-2e3f-4a5b6c7d8e9f', 'To drink', 'Beber', 'HARD', 'e1b2c3d4-5f6a-4b3c-8d7e-9f8a7b6c5d4e');
 
--- Insert rubros
-INSERT INTO rubro (id, nombre) VALUES (1, 'Electronics');
-INSERT INTO rubro (id, nombre) VALUES (2, 'Books');
-INSERT INTO rubro (id, nombre) VALUES (3, 'Clothing');
 
--- Insert tipo_precios
-INSERT INTO tipo_precio (id, nombre) VALUES (1, 'Retail');
-INSERT INTO tipo_precio (id, nombre) VALUES (2, 'Wholesale');
-
--- Insert unidades
-INSERT INTO unidad (id, nombre) VALUES (1, 'Piece');
-INSERT INTO unidad (id, nombre) VALUES (2, 'Box');
-
--- Insert productos
-INSERT INTO producto (id, nombre, descripcion, precio, rubro_id, tipo_precio_id, unidad_id) VALUES (1, 'Laptop', 'A powerful laptop.', 1200.00, 1, 1, 1);
-INSERT INTO producto (id, nombre, descripcion, precio, rubro_id, tipo_precio_id, unidad_id) VALUES (2, 'The Lord of the Rings', 'A classic fantasy book.', 25.00, 2, 1, 1);
-INSERT INTO producto (id, nombre, descripcion, precio, rubro_id, tipo_precio_id, unidad_id) VALUES (3, 'T-shirt', 'A comfortable t-shirt.', 15.00, 3, 1, 1);
